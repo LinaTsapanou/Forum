@@ -1,6 +1,7 @@
-import "primereact/resources/themes/lara-light-indigo/theme.css"; //theme
-import "primereact/resources/primereact.min.css"; //core css
-import "primeicons/primeicons.css"; //icons
+import "primereact/resources/themes/lara-light-indigo/theme.css";
+import "primereact/resources/primereact.min.css";
+import "primeicons/primeicons.css";
+import "../../css/style.css";
 
 import { Component } from "react";
 import { DataTable } from "primereact/datatable";
@@ -15,7 +16,7 @@ import { Accordion, AccordionTab } from "primereact/accordion";
 import { PostService } from "../services/PostService";
 import { ThreadService } from "../services/ThreadService";
 import { Menubar } from "primereact/menubar";
-import "../../css/style.css";
+
 
 export default class Threads extends Component {
   constructor() {
@@ -85,15 +86,12 @@ export default class Threads extends Component {
       this.setState({ posts: data });
 
       const found = this.state.posts.find((p) => p.thread === "Thread 1");
-
       this.state.list1 = this.state.list1.concat(found);
 
       const found2 = this.state.posts.find((p) => p.thread === "Thread 2");
-
       this.state.list2 = this.state.list2.concat(found2);
 
       const found3 = this.state.posts.find((p) => p.thread === "Thread 3");
-
       this.state.list3 = this.state.list3.concat(found3);
     });
   }
@@ -176,9 +174,9 @@ export default class Threads extends Component {
             style={{ width: "50vw" }}
             footer={this.footer}
           >
-            <div className="row p-4 mt-5 justify-content-left ">
+            <div className="row p-4 justify-content-left ">
               <div className="col-5 d-flex flex-column">
-                <label className="fs-5  mb-2">Title of new post</label>
+                <label className="fs-5 mb-2">Title of new post</label>
                 <InputText
                   className="mb-3"
                   id="title"
@@ -204,7 +202,7 @@ export default class Threads extends Component {
             </div>
           </Dialog>
 
-          <label className="fs-5  mb-2">Category of new post</label>
+          <label className="fs-5 mt-5 mb-2">Category of new post</label>
           <Dropdown
             className="mb-3"
             optionLabel="name"
@@ -229,22 +227,7 @@ export default class Threads extends Component {
             checked={this.state.public}
             onChange={(e) => this.setState({ public: e.value })}
           />
-          {/* Post info */}
-          {/* <div className="bg-light rounded-4 m-4 p-4 mb-1">
-            <div class="mb-3">
-              <div className="fw-bold fs-4 d-inline p-2 text-dark">
-                Post name
-              </div>
-              <i className="d-inline p-2 text-dark pi pi-question-circle"></i>
-              <i className="d-inline p-2 text-dark pi pi-volume-up"></i>
-              <i className="d-inline p-2 text-dark pi pi-pencil"></i>
-            </div>
-            <p>
-              Body body body body body body body body body body body body body
-              body body body body body body body body body body body body body
-              body body
-            </p>
-          </div> */}
+
         </div>
       </div>
     );
