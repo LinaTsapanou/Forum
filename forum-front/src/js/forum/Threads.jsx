@@ -11,8 +11,10 @@ import { InputTextarea } from "primereact/inputtextarea";
 import { Button } from "primereact/button";
 import { InputSwitch } from "primereact/inputswitch";
 import { Accordion, AccordionTab } from "primereact/accordion";
-import "../../css/style.css";
 import { PostService } from "../services/PostService";
+import "../../css/style.css";
+
+
 
 export default class Threads extends Component {
   constructor() {
@@ -72,50 +74,59 @@ export default class Threads extends Component {
     return (
       <div className="row p-4 mt-5 justify-content-center ">
         <div className="col-7 bg-primary rounded-4 d-flex align-middle flex-column p-4 bg-info">
-          <div className="fw-bold fst-italic fs-1 text-center text-white mb-3 p-3">
-            Forum
-          </div>
-          <Accordion multiple activeIndex={[0]}>
-            <AccordionTab header="Thread 1">
-              <DataTable
-                value={this.state.posts}
-                selectionMode="single"
-                //selection={this.state.selectedThread}
-                //onSelectionChange={e => this.setState({ selectedThread: e.value })}
 
-                dataKey="id"
-                responsiveLayout="scroll"
-              >
-                <Column field="title" header="TITLE"></Column>
-                <Column field="body" header="BODY"></Column>
-                <Column field="category" header="CATEGORY"></Column>
-              </DataTable>
-            </AccordionTab>
-            <AccordionTab header="Thread 2">
-              <p>
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-                quae ab illo inventore veritatis et quasi architecto beatae
-                vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia
-                voluptas sit aspernatur aut odit aut fugit, sed quia
-                consequuntur magni dolores eos qui ratione voluptatem sequi
-                nesciunt. Consectetur, adipisci velit, sed quia non numquam eius
-                modi.
-              </p>
-            </AccordionTab>
-            <AccordionTab header="Thread 3">
-              <p>
-                At vero eos et accusamus et iusto odio dignissimos ducimus qui
-                blanditiis praesentium voluptatum deleniti atque corrupti quos
-                dolores et quas molestias excepturi sint occaecati cupiditate
-                non provident, similique sunt in culpa qui officia deserunt
-                mollitia animi, id est laborum et dolorum fuga. Et harum quidem
-                rerum facilis est et expedita distinctio. Nam libero tempore,
-                cum soluta nobis est eligendi optio cumque nihil impedit quo
-                minus.
-              </p>
-            </AccordionTab>
-          </Accordion>
+            <div className="fw-bold fst-italic fs-1 text-center text-white mb-3 p-3">Forum</div>
+
+                <Accordion multiple activeIndex={[0]}>
+
+                    <AccordionTab header="Thread 1">
+                        <DataTable
+                            value={this.state.posts}
+                            selectionMode="single"
+                            //selection={this.state.selectedThread}
+                            //onSelectionChange={e => this.setState({ selectedThread: e.value })}
+                            dataKey="id"
+                            responsiveLayout="scroll"
+                        >
+                            <Column field="title" header="TITLE"></Column>
+                            <Column field="body" header="BODY"></Column>
+                            <Column field="category" header="CATEGORY"></Column>
+                        </DataTable>
+                    </AccordionTab>
+
+                    <AccordionTab header="Thread 2">
+                        <DataTable
+                            value={this.state.posts}
+                            selectionMode="single"
+                            //selection={this.state.selectedThread}
+                            //onSelectionChange={e => this.setState({ selectedThread: e.value })}
+                            dataKey="id"
+                            responsiveLayout="scroll"
+                        >
+                            <Column field="title" header="TITLE"></Column>
+                            <Column field="body" header="BODY"></Column>
+                            <Column field="category" header="CATEGORY"></Column>
+                        </DataTable>
+                    </AccordionTab>
+
+                    <AccordionTab header="Thread 3">
+                        <DataTable
+                            value={this.state.posts}
+                            selectionMode="single"
+                            //selection={this.state.selectedThread}
+                            //onSelectionChange={e => this.setState({ selectedThread: e.value })}
+                            dataKey="id"
+                            responsiveLayout="scroll"
+                        >
+                            <Column field="title" header="TITLE"></Column>
+                            <Column field="body" header="BODY"></Column>
+                            <Column field="category" header="CATEGORY"></Column>
+                        </DataTable>
+                    </AccordionTab>
+
+            </Accordion>
+
+
           {/* <DataTable
                     value={this.state.threads}
                     selectionMode="single"
@@ -128,6 +139,13 @@ export default class Threads extends Component {
                         <Column field="t_title" header="Threads"></Column>
                     </DataTable>  */}
 
+
+
+
+
+
+
+          {/* Form add post */}
           <div className="row p-4 mt-5 justify-content-left">
             <div className="col-5 d-flex flex-column">
               <label className="fs-5 text-white mb-2">Title of new post</label>
@@ -169,10 +187,18 @@ export default class Threads extends Component {
             </div>
           </div>
 
+
+
+
+
+          {/* Post info */}
           <div className="bg-light rounded-4 m-4 p-4 mb-1">
             <div class="mb-3">
-              <div class="fw-bold fs-4 d-inline p-2 text-dark">Post name</div>
-              <div class="d-inline p-2 text-dark">icon</div>
+              <div className="fw-bold fs-4 d-inline p-2 text-dark">Post name</div>
+              <i className="d-inline p-2 text-dark pi pi-question-circle"></i>
+              <i className="d-inline p-2 text-dark pi pi-volume-up"></i>
+              <i className="d-inline p-2 text-dark pi pi-pencil"></i>
+
             </div>
             <p>
               Body body body body body body body body body body body body body
@@ -180,6 +206,10 @@ export default class Threads extends Component {
               body body
             </p>
           </div>
+
+
+
+
         </div>
       </div>
     );
