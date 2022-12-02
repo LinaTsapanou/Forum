@@ -125,9 +125,9 @@ export default class Threads extends Component {
             Forum
           </div>
 
-          <Accordion multiple activeIndex={[0]}>
+          <Accordion multiple activeIndex={[0]} name="acordeon">
             <AccordionTab header="Thread 1">
-              <Menubar model={this.items} />
+              <Menubar id="menuAcordeon" model={this.items} />
               <DataTable
                 value={this.state.list1}
                 dataKey="id"
