@@ -40,7 +40,7 @@ public class PostController {
 	}
 
 	@GetMapping("/{id}")
-	public ResponseEntity<Post> getById(@PathVariable Integer id) throws Exception {
+	public ResponseEntity<Post> getById(@PathVariable String id) throws Exception {
 
 		Post post = service.getById(id);
 		if (post == null) {

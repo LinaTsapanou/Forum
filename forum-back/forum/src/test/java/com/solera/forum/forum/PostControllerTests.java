@@ -48,7 +48,7 @@ public class PostControllerTests {
 		List<String> cat= new ArrayList<>();
 		cat.add("question");
 		Post post = new Post();
-		post.setId(1234);
+		post.setId("1234");
 		post.setBody("any text");
 		post.setCategory(cat);
 		post.setTitle("title");
@@ -74,7 +74,7 @@ public class PostControllerTests {
 		cat.add("question");
 		
 		Post post = new Post();
-		post.setId(1234);
+		post.setId("123");
 		post.setBody("any text");
 		post.setCategory(cat);
 		post.setTitle("title");
@@ -100,12 +100,12 @@ public class PostControllerTests {
 
 		// given - precondition or setup
 
-		Integer userId = 1;
+		String userId = "1";
 		List<String> cat= new ArrayList<>();
 		cat.add("question");
 		
 		Post post = new Post();
-		post.setId(1234);
+		post.setId("1234");
 		post.setBody("any text");
 		post.setCategory(cat);
 		post.setTitle("title");
@@ -130,7 +130,7 @@ public class PostControllerTests {
 	public void givenInvalidPostId_whenGetById_thenReturnEmpty() throws Exception {
 		// given - precondition or setup
 
-				Integer userId = 33;
+				String userId = "33";
 				List<String> cat= new ArrayList<>();
 				cat.add("question");
 				

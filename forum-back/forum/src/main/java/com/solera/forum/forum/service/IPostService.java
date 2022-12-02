@@ -8,7 +8,7 @@ public interface IPostService {
 
 	public List<Post> getAll();
 
-	public Post getById(Integer id);
+	public Post getById(String id);
 
 	public Post create(Post post);
 	

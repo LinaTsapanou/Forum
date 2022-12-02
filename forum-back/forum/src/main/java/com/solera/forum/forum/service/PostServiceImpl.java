@@ -21,7 +21,7 @@ public class PostServiceImpl implements IPostService {
 	}
 
 	@Override
-	public Post getById(Integer id) {
+	public Post getById(String id) {
 
 		return repository.findById(id).orElse(null);
 	}

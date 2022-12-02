@@ -8,18 +8,28 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document
 public class Post {
 	@Id
-	private Integer id;
+	private String id;
 	private String title;
 	private List<String> category;
 	private String body;
+	private String thread;
 	
 
-	public Integer getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(String id) {
 		this.id = id;
+	}
+
+	
+	public String getThread() {
+		return thread;
+	}
+
+	public void setThread(String thread) {
+		this.thread = thread;
 	}
 
 	public String getTitle() {
